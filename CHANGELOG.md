@@ -1,3 +1,10 @@
+# [1.0.0-rc.3](https://github.com/armandwipangestu/gis-ui/compare/v1.0.0-rc.2...v1.0.0-rc.3) (2025-12-02)
+
+
+### Bug Fixes
+
+* docker build command ([1a73ac6](https://github.com/armandwipangestu/gis-ui/commit/1a73ac6e32786ad5194ff3dc18fdb494303d8b66))
+
 # [1.0.0-rc.2](https://github.com/armandwipangestu/gis-ui/compare/v1.0.0-rc.1...v1.0.0-rc.2) (2025-12-02)
 
 
