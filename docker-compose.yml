@@ -1,0 +1,16 @@
+services:
+  gis-ui:
+    build:
+      context: .
+      dockerfile: Dockerfile
+      args:
+        VITE_BASE_URL: "http://localhost:3000"
+    container_name: gis-ui
+    restart: unless-stopped
+    ports:
+      - "5173:80"
+    logging:
+      driver: "json-file"
+      options:
+        max-size: "500M"
+        max-file: "3"
