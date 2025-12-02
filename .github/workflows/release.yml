@@ -97,7 +97,7 @@ jobs:
         run: |
           docker build \
             -f ${{ steps.vars.outputs.dockerfile }} \
-            --build-arg VITE_BASE_URL=${{ secrets.VITE_BASE_URL || 'http://localhost:3000' }}
+            --build-arg VITE_BASE_URL=${{ secrets.VITE_BASE_URL || 'http://localhost:3000' }} \
             -t ${{ env.IMAGE_NAME }}:${{ steps.vars.outputs.tag }} .
 
       - name: Push Docker Image
