@@ -1,3 +1,10 @@
+# [1.0.0-rc.2](https://github.com/armandwipangestu/gis-ui/compare/v1.0.0-rc.1...v1.0.0-rc.2) (2025-12-02)
+
+
+### Bug Fixes
+
+* ghcr link ([e5eb46e](https://github.com/armandwipangestu/gis-ui/commit/e5eb46e1e617a6eff0d5f340ac3fd31a559e9246))
+
 # 1.0.0-rc.1 (2025-12-02)
 
 
