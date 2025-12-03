@@ -1,3 +1,11 @@
+# [1.0.0-rc.6](https://github.com/armandwipangestu/gis-ui/compare/v1.0.0-rc.5...v1.0.0-rc.6) (2025-12-03)
+
+
+### Features
+
+* **layout:** add component header ([4f264e4](https://github.com/armandwipangestu/gis-ui/commit/4f264e48ac0ca2db046e7a03a974cb4ab5184f89))
+* **layout:** add layout application ([bb1e482](https://github.com/armandwipangestu/gis-ui/commit/bb1e482e5aa366a345b46b9c48b674f3402cbc75))
+
 # [1.0.0-rc.5](https://github.com/armandwipangestu/gis-ui/compare/v1.0.0-rc.4...v1.0.0-rc.5) (2025-12-03)
 
 
