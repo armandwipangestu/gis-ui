@@ -1,3 +1,11 @@
+# [1.0.0-rc.5](https://github.com/armandwipangestu/gis-ui/compare/v1.0.0-rc.4...v1.0.0-rc.5) (2025-12-03)
+
+
+### Features
+
+* **zustand:** add store auth ([f228d1a](https://github.com/armandwipangestu/gis-ui/commit/f228d1a24615685ae2fa9cddc4e1cb09e1a40a30))
+* **zustand:** add store sidebar ([04494bb](https://github.com/armandwipangestu/gis-ui/commit/04494bb5b9630945a777b1f5a57f0a071b8283cb))
+
 # [1.0.0-rc.4](https://github.com/armandwipangestu/gis-ui/compare/v1.0.0-rc.3...v1.0.0-rc.4) (2025-12-03)
 
 
