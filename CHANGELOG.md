@@ -1,3 +1,12 @@
+# [1.0.0-rc.7](https://github.com/armandwipangestu/gis-ui/compare/v1.0.0-rc.6...v1.0.0-rc.7) (2025-12-04)
+
+
+### Features
+
+* **authentication:** add login process ([eccee95](https://github.com/armandwipangestu/gis-ui/commit/eccee9500bf25c07aadcfcc0d75a95a82add5bf1))
+* **authentication:** add utils permissions ([f609871](https://github.com/armandwipangestu/gis-ui/commit/f609871e3d37a2938aaac1d9e39c81f0c6c8e408))
+* **authentication:** add view and route auth ([626e8cb](https://github.com/armandwipangestu/gis-ui/commit/626e8cb2c5e7b570dcf990d89bd248175a0a9ada))
+
 # [1.0.0-rc.6](https://github.com/armandwipangestu/gis-ui/compare/v1.0.0-rc.5...v1.0.0-rc.6) (2025-12-03)
 
 
