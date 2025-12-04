@@ -1,10 +1,11 @@
 import { type FC } from "react";
+import AppRoutes from "./routes"
 import { Toaster } from "react-hot-toast";
 
 const App: FC = () => {
     return (
         <>
-            <h1>Hello World!</h1>
+            <AppRoutes />
             <Toaster />
         </>
     );
