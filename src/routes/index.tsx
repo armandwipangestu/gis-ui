@@ -4,6 +4,7 @@ import { useAuthStore } from "../stores/auth";
 
 import Login from "../views/auth/login";
 import Dashboard from "../views/admin/dashboard";
+import Forbidden from "../views/admin/forbidden";
 
 export default function AppRoutes() {
     // Get state isAuthenticated from useAuthStore
@@ -29,6 +30,18 @@ export default function AppRoutes() {
                 element={
                     isAuthenticated ? (
                         <Dashboard />
+                    ) : (
+                        <Navigate to="/login" replace />
+                    )
+                }
+            />
+
+            {/* Route "/admin/forbidden" */}
+            <Route
+                path="/admin/forbidden"
+                element={
+                    isAuthenticated ? (
+                        <Forbidden />
                     ) : (
                         <Navigate to="/login" replace />
                     )
