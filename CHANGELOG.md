@@ -1,3 +1,13 @@
+# [1.0.0-rc.9](https://github.com/armandwipangestu/gis-ui/compare/v1.0.0-rc.8...v1.0.0-rc.9) (2025-12-04)
+
+
+### Features
+
+* **components:** add component table empty row ([5b01e6e](https://github.com/armandwipangestu/gis-ui/commit/5b01e6e7e35f3f17bafa55553e3977f96dad8f62))
+* **components:** add loading component ([c47a911](https://github.com/armandwipangestu/gis-ui/commit/c47a911a93540f2fc22085c2662db79ddcbdbc82))
+* **components:** add pagination component ([c173c08](https://github.com/armandwipangestu/gis-ui/commit/c173c08b30bdf2d53b799361b814ac1c4074094c))
+* **forbidden:** add view and route forbidden ([e0ba9be](https://github.com/armandwipangestu/gis-ui/commit/e0ba9beae0fa47d1d69d6735e91e023923ddcbff))
+
 # [1.0.0-rc.8](https://github.com/armandwipangestu/gis-ui/compare/v1.0.0-rc.7...v1.0.0-rc.8) (2025-12-04)
 
 
