@@ -21,3 +21,19 @@ export interface AuthState {
     // Function to delete state authentication (clear `user.token` and `permissions`)
     logout: () => void;
 }
+
+// --- Interface LoginResponse
+export interface LoginResponse {
+    success: boolean;
+    message: string;
+    data: {
+        id: number;
+        name: string;
+        username: string;
+        email: string;
+        created_at: string;
+        updated_at: string;
+        permissions: Record<string, boolean>;
+        token: string;
+    };
+}
