@@ -2,7 +2,7 @@ import { create } from "zustand";
 
 import Api from "../services/api";
 
-import type { AuthState, Permissions } from "../types/auth";
+import type { AuthState, LoginResponse, Permissions } from "../types/auth";
 
 import Cookies from "js-cookie";
 
@@ -18,7 +18,10 @@ export const useAuthStore = create<AuthState>((set) => ({
     // Function for login
     login: async (credentials) => {
         // Fetch data from API
-        const response = await Api.post("/api/login", credentials);
+        const response = await Api.post<LoginResponse>(
+            "/api/login",
+            credentials
+        );
         const { data } = response.data;
 
         // Assign data to user, token, and permisions
@@ -33,7 +36,7 @@ export const useAuthStore = create<AuthState>((set) => ({
 
         // assign data to token and permissions
         const token: string = data.token;
-        const permissions: Permissions = data.permisions || {};
+        const permissions: Permissions = data.permissions || {};
 
         // Set state
         set({ user, token, permissions });
