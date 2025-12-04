@@ -1,3 +1,13 @@
+# [1.0.0-rc.8](https://github.com/armandwipangestu/gis-ui/compare/v1.0.0-rc.7...v1.0.0-rc.8) (2025-12-04)
+
+
+### Features
+
+* **dashboard:** add hooks dashboard (query) ([f59831a](https://github.com/armandwipangestu/gis-ui/commit/f59831ad90e975f0158eac4e79e136c4b1e9832e))
+* **dashboard:** add statistic data ([ef3fb22](https://github.com/armandwipangestu/gis-ui/commit/ef3fb2278f3fe2d8e654cce4e082373f448c23a0))
+* **dashboard:** add view and route dashboard ([08281fd](https://github.com/armandwipangestu/gis-ui/commit/08281fd937fa60d5577cbe9e2a9010b5b50b7921))
+* **package:** add react-query-devtools ([e31d1ba](https://github.com/armandwipangestu/gis-ui/commit/e31d1ba1ed1c31cbb2a02151ebb0870b948b0f9e))
+
 # [1.0.0-rc.7](https://github.com/armandwipangestu/gis-ui/compare/v1.0.0-rc.6...v1.0.0-rc.7) (2025-12-04)
 
 
