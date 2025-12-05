@@ -9,6 +9,15 @@ import Pagination from "../../../components/General/Pagination";
 import Loading from "../../../components/General/Loading";
 import Error from "../../../components/General/Error";
 
+// Import hook for delete role
+import { useRoleDelete } from "../../../hooks/admin/role/useRoleDelete";
+
+// Import query client TanStack Query
+import { useQueryClient } from "@tanstack/react-query";
+
+// Import toast dari react-hot-toast for notification
+import toast from "react-hot-toast";
+
 const Roles: React.FC = () => {
     // Change title page
     document.title = "Roles - GIS Desa Santri";
@@ -40,6 +49,36 @@ const Roles: React.FC = () => {
 
         setSearchParams(params);
     }, [submittedSearch, page]);
+
+    // Initialize useQueryClient
+    const queryClient = useQueryClient();
+
+    // Use hook useRoleDelete to delete role
+    const { mutate, isPending } = useRoleDelete();
+
+    // Function for handle deletion role
+    const handleDelete = (id: number) => {
+        if (confirm("Are you sure you want to delete this role?")) {
+            mutate(id, {
+                onSuccess: () => {
+                    // Invalidate list roles
+                    queryClient.invalidateQueries({ queryKey: ["roles"] });
+
+                    // Reset page to 1
+                    setPage(1);
+
+                    // Notification success
+                    toast.success("Role deleted successfully!", {
+                        position: "top-right",
+                        duration: 3000,
+                    });
+                },
+                onError: (error: Error) => {
+                    alert(`Failed to delete role: ${error.message}`);
+                },
+            });
+        }
+    };
 
     return (
         <AppLayout>
@@ -156,6 +195,14 @@ const Roles: React.FC = () => {
                                                             "roles-delete",
                                                         ]) && (
                                                             <button
+                                                                onClick={() =>
+                                                                    handleDelete(
+                                                                        role.id
+                                                                    )
+                                                                }
+                                                                disabled={
+                                                                    isPending
+                                                                }
                                                                 className="text-red-500 hover:text-red-700 p-1.5 rounded-full hover:bg-red-50 transition-colors"
                                                                 title="Delete"
                                                             >
