@@ -1,3 +1,15 @@
+# [1.0.0-rc.10](https://github.com/armandwipangestu/gis-ui/compare/v1.0.0-rc.9...v1.0.0-rc.10) (2025-12-05)
+
+
+### Features
+
+* **hooks:** add permission by id hook ([efdb728](https://github.com/armandwipangestu/gis-ui/commit/efdb72848c3ed73afa2d1f8ce3fc9c6fafdf83f6))
+* **hooks:** add permission create (mutate) hook ([2b9f21a](https://github.com/armandwipangestu/gis-ui/commit/2b9f21ad173cd2b2183e6fe30868a9f0ff42ed05))
+* **hooks:** add permission delete (mutate) hook ([be1f629](https://github.com/armandwipangestu/gis-ui/commit/be1f62985687d25b22e351159b2290b2b82469de))
+* **hooks:** add permission hook ([99c0252](https://github.com/armandwipangestu/gis-ui/commit/99c0252f8a69f56a57790471288db882607a9542))
+* **hooks:** add permission update (mutate) hook ([0e86937](https://github.com/armandwipangestu/gis-ui/commit/0e86937c82d3f6116c9ee95df74d18ea877ba842))
+* **hooks:** add permissions get all hook ([1527895](https://github.com/armandwipangestu/gis-ui/commit/152789594d56511816038ef73f062edcafbf6e29))
+
 # [1.0.0-rc.9](https://github.com/armandwipangestu/gis-ui/compare/v1.0.0-rc.8...v1.0.0-rc.9) (2025-12-04)
 
 
