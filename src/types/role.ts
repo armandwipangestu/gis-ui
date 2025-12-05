@@ -4,7 +4,7 @@ import type { Permission } from "./permission";
 export interface Role {
     id: number;
     name: string;
-    permission?: Permission[];
+    permissions?: Permission[];
     created_at: string;
     updated_at: string;
 }
