@@ -1,3 +1,13 @@
+# [1.0.0-rc.13](https://github.com/armandwipangestu/gis-ui/compare/v1.0.0-rc.12...v1.0.0-rc.13) (2025-12-05)
+
+
+### Features
+
+* **crud:** add create data roles ([bcfb5b3](https://github.com/armandwipangestu/gis-ui/commit/bcfb5b32743fdf7bff1e98eb5b6d57eab11d6102))
+* **crud:** add delete data roles ([571deb8](https://github.com/armandwipangestu/gis-ui/commit/571deb8d7caa1e16ab5c32181e2e46230a1016f2))
+* **crud:** add edit data roles ([b4a1f2b](https://github.com/armandwipangestu/gis-ui/commit/b4a1f2be40cccd417d54067ad334dfff4327ac44))
+* **crud:** add list data roles ([686705f](https://github.com/armandwipangestu/gis-ui/commit/686705f862e3c69f23bdd536c5d6e0535659683d))
+
 # [1.0.0-rc.12](https://github.com/armandwipangestu/gis-ui/compare/v1.0.0-rc.11...v1.0.0-rc.12) (2025-12-05)
 
 
