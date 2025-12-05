@@ -1,3 +1,12 @@
+# [1.0.0-rc.11](https://github.com/armandwipangestu/gis-ui/compare/v1.0.0-rc.10...v1.0.0-rc.11) (2025-12-05)
+
+
+### Features
+
+* **crud:** add create data permission ([2076709](https://github.com/armandwipangestu/gis-ui/commit/20767090467adc7ffd1a2f58066e6a0924e8a255))
+* **crud:** add edit and update data permission ([baa0a53](https://github.com/armandwipangestu/gis-ui/commit/baa0a5349da541017f634cc99974a5d58c8894b5))
+* **crud:** add list data permissions ([38a9d78](https://github.com/armandwipangestu/gis-ui/commit/38a9d782157d585df12b58f85d2116d90796e2e3))
+
 # [1.0.0-rc.10](https://github.com/armandwipangestu/gis-ui/compare/v1.0.0-rc.9...v1.0.0-rc.10) (2025-12-05)
 
 
