@@ -9,6 +9,7 @@ import Permissions from "../views/admin/permissions";
 import PermissionCreate from "../views/admin/permissions/create";
 import PermissionEdit from "../views/admin/permissions/edit";
 import Roles from "../views/admin/roles";
+import RoleCreate from "../views/admin/roles/create";
 
 export default function AppRoutes() {
     // Get state isAuthenticated from useAuthStore
@@ -94,6 +95,18 @@ export default function AppRoutes() {
                 element={
                     isAuthenticated ? (
                         <Roles />
+                    ) : (
+                        <Navigate to="/login" replace />
+                    )
+                }
+            />
+
+            {/* Route "/admin/roles/create" */}
+            <Route
+                path="/admin/roles/create"
+                element={
+                    isAuthenticated ? (
+                        <RoleCreate />
                     ) : (
                         <Navigate to="/login" replace />
                     )
