@@ -10,7 +10,7 @@ export interface Role {
 }
 
 // --- Structure respons API for list Role (pagination)
-export interface RoleResponse {
+export interface RolesResponse {
     current_page: number;
     data: Role[];
     last_page: number;
