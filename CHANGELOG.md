@@ -1,3 +1,15 @@
+# [1.0.0-rc.12](https://github.com/armandwipangestu/gis-ui/compare/v1.0.0-rc.11...v1.0.0-rc.12) (2025-12-05)
+
+
+### Features
+
+* **hooks:** add role all hook ([55c5514](https://github.com/armandwipangestu/gis-ui/commit/55c551447779c8da5c45c21d6bbc39a4f04eb00b))
+* **hooks:** add role by id hook ([1415777](https://github.com/armandwipangestu/gis-ui/commit/1415777d06649f8e81b3af010eac2df7ca0f6959))
+* **hooks:** add role create hook ([27d85cc](https://github.com/armandwipangestu/gis-ui/commit/27d85cc5a484211ee21eca3dc7c3c4a83c24f566))
+* **hooks:** add role delete hook ([94f5f12](https://github.com/armandwipangestu/gis-ui/commit/94f5f12f74534c2a24a5a8eb500ea6263cc6023d))
+* **hooks:** add role hook ([3a2ad0b](https://github.com/armandwipangestu/gis-ui/commit/3a2ad0bba511eb020f6fab05a3bf890cd052056c))
+* **hooks:** add role update hook ([b6eea6b](https://github.com/armandwipangestu/gis-ui/commit/b6eea6badf6836e04f4c971a31962ef4c744bedd))
+
 # [1.0.0-rc.11](https://github.com/armandwipangestu/gis-ui/compare/v1.0.0-rc.10...v1.0.0-rc.11) (2025-12-05)
 
 
