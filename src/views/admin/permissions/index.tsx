@@ -9,6 +9,15 @@ import Pagination from "../../../components/General/Pagination";
 import Loading from "../../../components/General/Loading";
 import Error from "../../../components/General/Error";
 
+// Import Hook for delete permission
+import { usePermissionDelete } from "../../../hooks/admin/permission/usePermissionDelete";
+
+// Import query client TanStack Query
+import { useQueryClient } from "@tanstack/react-query";
+
+// Import toast from react-hot-toast for notification
+import toast from "react-hot-toast";
+
 const Permissions: React.FC = () => {
     // Change title page
     document.title = "Permissions - GIS Desa Santri";
@@ -41,6 +50,40 @@ const Permissions: React.FC = () => {
 
         setSearchParams(params);
     }, [submittedSearch, page]);
+
+    // Initialize useQueryClient
+    const queryClient = useQueryClient();
+
+    // Use hook usePermissionDelete for deleting permission
+    const { mutate, isPending } = usePermissionDelete();
+
+    // Function for handling request delete permission
+    const handleDelete = (id: number) => {
+        if (confirm("Are you sure you want to delete this permission")) {
+            // Call mutate from usePermissionDelete for proses delete permission
+            mutate(id, {
+                onSuccess: () => {
+                    // After success delete, invalidate query to update the data
+                    queryClient.invalidateQueries({
+                        queryKey: ["permissions"],
+                    });
+
+                    // After success, reset page to 1
+                    setPage(1);
+
+                    // Show notify toast
+                    toast.success("Permission deleted successfully!", {
+                        position: "top-right",
+                        duration: 3000,
+                    });
+                },
+                onError: (error: Error) => {
+                    // Show message error if exist
+                    alert(`Failed to delete permission: ${error.message}`);
+                },
+            });
+        }
+    };
 
     return (
         <AppLayout>
@@ -150,6 +193,14 @@ const Permissions: React.FC = () => {
                                                             "permissions-delete",
                                                         ]) && (
                                                             <button
+                                                                onClick={() =>
+                                                                    handleDelete(
+                                                                        permission.id
+                                                                    )
+                                                                }
+                                                                disabled={
+                                                                    isPending
+                                                                }
                                                                 className="text-red-500 hover:text-text-700 p-1.5 rounded-full hover:bg-red-50 transition-colors"
                                                                 title="Delete"
                                                             >
