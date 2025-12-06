@@ -1,3 +1,10 @@
+# [1.0.0-rc.18](https://github.com/armandwipangestu/gis-ui/compare/v1.0.0-rc.17...v1.0.0-rc.18) (2025-12-06)
+
+
+### Features
+
+* **settings:** add view and update setting ([dfab245](https://github.com/armandwipangestu/gis-ui/commit/dfab245170bf8f0dacd95a48e3c78a3ef3ca127d))
+
 # [1.0.0-rc.17](https://github.com/armandwipangestu/gis-ui/compare/v1.0.0-rc.16...v1.0.0-rc.17) (2025-12-06)
 
 
