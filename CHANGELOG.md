@@ -1,3 +1,13 @@
+# [1.0.0-rc.15](https://github.com/armandwipangestu/gis-ui/compare/v1.0.0-rc.14...v1.0.0-rc.15) (2025-12-06)
+
+
+### Features
+
+* **crud:** add create data users ([8b715eb](https://github.com/armandwipangestu/gis-ui/commit/8b715eb23cf8a724e9737b2ff1dfc7bd81bc6039))
+* **crud:** add delete data users ([41fd985](https://github.com/armandwipangestu/gis-ui/commit/41fd985e59a8722f1008c25fef0486235646ae7f))
+* **crud:** add edit data users ([0b76a26](https://github.com/armandwipangestu/gis-ui/commit/0b76a26d196ecd0dd5c109923142ca7c4b3207a4))
+* **crud:** add list data users ([0620cbf](https://github.com/armandwipangestu/gis-ui/commit/0620cbfb472ad382a27b56dacf502963cbe8c7d1))
+
 # [1.0.0-rc.14](https://github.com/armandwipangestu/gis-ui/compare/v1.0.0-rc.13...v1.0.0-rc.14) (2025-12-06)
 
 
