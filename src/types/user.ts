@@ -12,7 +12,7 @@ export interface User {
 }
 
 // --- Structure respons API for list user (pagination)
-export interface UserResponse {
+export interface UsersResponse {
     current_page: number;
     data: User[];
     last_page: number;
