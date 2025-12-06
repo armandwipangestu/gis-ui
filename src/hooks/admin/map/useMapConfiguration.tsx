@@ -34,7 +34,7 @@ export function useMapConfiguration(initialConfig?: MapConfigurationProps) {
     const mapRef = useRef<LeafletMap | null>(null);
 
     // Get current view from map (center + zoom) -> fill to state
-    const handleUserCurrentView = (map: LeafletMap | null = mapRef.current) => {
+    const handleUseCurrentView = (map: LeafletMap | null = mapRef.current) => {
         if (!map) return;
         const center = map.getCenter();
         const zoom = map.getZoom();
@@ -80,7 +80,7 @@ export function useMapConfiguration(initialConfig?: MapConfigurationProps) {
         setGeometry,
 
         // Actions
-        handleUserCurrentView,
+        handleUseCurrentView,
         handleResetGeometry,
         getMapCenter,
 
