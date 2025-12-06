@@ -131,7 +131,11 @@ export function GeometryEditor({
             }
 
             // Multi/single follow logic that already exist
-            const next = toMultiGeometry(fc.features, type, allowMulti);
+            const next = toMultiGeometry({
+                features: fc.features,
+                type,
+                allowMulti,
+            });
             onChange(next, map);
         };
 
