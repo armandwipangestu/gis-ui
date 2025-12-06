@@ -1,3 +1,10 @@
+# [1.0.0-rc.19](https://github.com/armandwipangestu/gis-ui/compare/v1.0.0-rc.18...v1.0.0-rc.19) (2025-12-06)
+
+
+### Bug Fixes
+
+* passing props function toMultiGeometry ([caed720](https://github.com/armandwipangestu/gis-ui/commit/caed720aa971f1a7e835bd8eabf74a735b794a5f))
+
 # [1.0.0-rc.18](https://github.com/armandwipangestu/gis-ui/compare/v1.0.0-rc.17...v1.0.0-rc.18) (2025-12-06)
 
 
