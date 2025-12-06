@@ -8,6 +8,9 @@ import TableEmptyRow from "../../../components/General/TableEmptyRow";
 import Pagination from "../../../components/General/Pagination";
 import Loading from "../../../components/General/Loading";
 import Error from "../../../components/General/Error";
+import { useUserDelete } from "../../../hooks/admin/user/useUserDelete";
+import { useQueryClient } from "@tanstack/react-query";
+import toast from "react-hot-toast";
 
 const Users: React.FC = () => {
     // Change title page
@@ -39,6 +42,36 @@ const Users: React.FC = () => {
         if (page > 1) params.page = String(page);
         setSearchParams(params);
     }, [submittedSearch, page]);
+
+    // Initialize useQueryClient
+    const queryClient = useQueryClient();
+
+    // Use hook useUserDelete for delete user
+    const { mutate, isPending } = useUserDelete();
+
+    // Function that handle deleted user
+    const handleDelete = (id: number) => {
+        if (confirm("Are you sure you want to delete this user?")) {
+            mutate(id, {
+                onSuccess: () => {
+                    // Invalidate list users
+                    queryClient.invalidateQueries({ queryKey: ["users"] });
+
+                    // Reset page to 1
+                    setPage(1);
+
+                    // Notification success
+                    toast.success("User deleted successfully!", {
+                        position: "top-right",
+                        duration: 3000,
+                    });
+                },
+                onError: (error: Error) => {
+                    alert(`Failed to delete user: ${error.message}`);
+                },
+            });
+        }
+    };
 
     return (
         <AppLayout>
@@ -171,6 +204,14 @@ const Users: React.FC = () => {
                                                             "users-delete",
                                                         ]) && (
                                                             <button
+                                                                onClick={() =>
+                                                                    handleDelete(
+                                                                        user.id
+                                                                    )
+                                                                }
+                                                                disabled={
+                                                                    isPending
+                                                                }
                                                                 className="text-red-500 hover:text-red-700 p-1.5 rounded-full hover:bg-red-50 transition-colors"
                                                                 title="Delete"
                                                             >
