@@ -1,3 +1,14 @@
+# [1.0.0-rc.17](https://github.com/armandwipangestu/gis-ui/compare/v1.0.0-rc.16...v1.0.0-rc.17) (2025-12-06)
+
+
+### Features
+
+* **components:** add geometry editor ([b42499c](https://github.com/armandwipangestu/gis-ui/commit/b42499c71cc9197130720d7ecd1c437bab097f37))
+* **components:** add map with geometry editor ([7e59628](https://github.com/armandwipangestu/gis-ui/commit/7e596285a517011e5b24f64eff8081608a39d73f))
+* **components:** add recenter on props ([33696e6](https://github.com/armandwipangestu/gis-ui/commit/33696e6ae5488b150f1dc0e920e5912fd78a5f7d))
+* **helper:** add geojson parser ([13498c4](https://github.com/armandwipangestu/gis-ui/commit/13498c40bd9bb5c17b8dab1b37818f1d3bdc15ba))
+* **hooks:** add map configuration hook ([31b0605](https://github.com/armandwipangestu/gis-ui/commit/31b0605d98d497ca94fb429e93506b533fda5e0a))
+
 # [1.0.0-rc.16](https://github.com/armandwipangestu/gis-ui/compare/v1.0.0-rc.15...v1.0.0-rc.16) (2025-12-06)
 
 
