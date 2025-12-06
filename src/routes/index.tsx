@@ -11,6 +11,7 @@ import PermissionEdit from "../views/admin/permissions/edit";
 import Roles from "../views/admin/roles";
 import RoleCreate from "../views/admin/roles/create";
 import RoleEdit from "../views/admin/roles/edit";
+import Users from "../views/admin/users";
 
 export default function AppRoutes() {
     // Get state isAuthenticated from useAuthStore
@@ -115,11 +116,23 @@ export default function AppRoutes() {
             />
 
             {/* Route "/admin/roles/edit/:id" */}
-            <Route 
+            <Route
                 path="/admin/roles/edit/:id"
                 element={
                     isAuthenticated ? (
                         <RoleEdit />
+                    ) : (
+                        <Navigate to="/login" replace />
+                    )
+                }
+            />
+
+            {/* Route "/admin/users" */}
+            <Route
+                path="/admin/users"
+                element={
+                    isAuthenticated ? (
+                        <Users />
                     ) : (
                         <Navigate to="/login" replace />
                     )
