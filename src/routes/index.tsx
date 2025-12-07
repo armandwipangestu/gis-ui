@@ -18,6 +18,7 @@ import Settings from "../views/admin/settings";
 import Categories from "../views/admin/categories";
 import CategoryCreate from "../views/admin/categories/create";
 import CategoryEdit from "../views/admin/categories/edit";
+import Maps from "../views/admin/maps";
 
 export default function AppRoutes() {
     // Get state isAuthenticated from useAuthStore
@@ -211,6 +212,18 @@ export default function AppRoutes() {
                 element={
                     isAuthenticated ? (
                         <CategoryEdit />
+                    ) : (
+                        <Navigate to="/login" replace />
+                    )
+                }
+            />
+
+            {/* Route "/admin/maps" */}
+            <Route
+                path="/admin/maps"
+                element={
+                    isAuthenticated ? (
+                        <Maps />
                     ) : (
                         <Navigate to="/login" replace />
                     )
