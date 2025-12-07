@@ -8,6 +8,9 @@ import TableEmptyRow from "../../../components/General/TableEmptyRow";
 import Pagination from "../../../components/General/Pagination";
 import Loading from "../../../components/General/Loading";
 import Error from "../../../components/General/Error";
+import { useCategoryDelete } from "../../../hooks/admin/category/useCategoryDelete";
+import { useQueryClient } from "@tanstack/react-query";
+import toast from "react-hot-toast";
 
 const Categories: React.FC = () => {
     // Change title page
@@ -45,6 +48,36 @@ const Categories: React.FC = () => {
 
         setSearchParams(params);
     }, [submittedSearch, page]);
+
+    // TanStack Query client
+    const queryClient = useQueryClient();
+
+    // Hook delete category
+    const { mutate, isPending } = useCategoryDelete();
+
+    // Delete category
+    const handleDelete = (id: number) => {
+        if (confirm("Are you sure you want to delete this category?")) {
+            mutate(id, {
+                onSuccess: () => {
+                    // Refresh list
+                    queryClient.invalidateQueries({ queryKey: ["categories"] });
+
+                    // Back to page 1 (optional)
+                    setPage(1);
+
+                    // Toast success
+                    toast.success("Category deleted successfully!", {
+                        position: "top-right",
+                        duration: 3000,
+                    });
+                },
+                onError: (error: Error) => {
+                    alert(`Failed to delete category: ${error.message}`);
+                },
+            });
+        }
+    };
 
     return (
         <AppLayout>
@@ -173,6 +206,14 @@ const Categories: React.FC = () => {
                                                             "categories-delete",
                                                         ]) && (
                                                             <button
+                                                                onClick={() =>
+                                                                    handleDelete(
+                                                                        category.id
+                                                                    )
+                                                                }
+                                                                disabled={
+                                                                    isPending
+                                                                }
                                                                 className="text-red-500 hover:text-red-700 p-1.5 rounded-full hover:bg-red-50 transition-colors"
                                                                 title="Delete"
                                                             >
