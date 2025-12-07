@@ -15,6 +15,7 @@ import Users from "../views/admin/users";
 import UserCreate from "../views/admin/users/create";
 import UserEdit from "../views/admin/users/edit";
 import Settings from "../views/admin/settings";
+import Categories from "../views/admin/categories";
 
 export default function AppRoutes() {
     // Get state isAuthenticated from useAuthStore
@@ -172,6 +173,18 @@ export default function AppRoutes() {
                 element={
                     isAuthenticated ? (
                         <Settings />
+                    ) : (
+                        <Navigate to="/login" replace />
+                    )
+                }
+            />
+
+            {/* Route "/admin/categories" */}
+            <Route
+                path="/admin/categories"
+                element={
+                    isAuthenticated ? (
+                        <Categories />
                     ) : (
                         <Navigate to="/login" replace />
                     )
