@@ -1,3 +1,20 @@
+# [1.0.0-rc.20](https://github.com/armandwipangestu/gis-ui/compare/v1.0.0-rc.19...v1.0.0-rc.20) (2025-12-07)
+
+
+### Bug Fixes
+
+* add Content-Type multipart/form-data to HTTP Request ([0e36a46](https://github.com/armandwipangestu/gis-ui/commit/0e36a46ff85218e8167f616e3b46f40ab74db86a))
+
+
+### Features
+
+* **hooks:** add category all hook ([6f24e4a](https://github.com/armandwipangestu/gis-ui/commit/6f24e4a1c88c145466832a95d00b9db452e9d886))
+* **hooks:** add category create (mutation) hook ([89d6792](https://github.com/armandwipangestu/gis-ui/commit/89d6792a272de92dd6596a662f6198469f8da5ea))
+* **hooks:** add category delete (mutation) hook ([a20c42a](https://github.com/armandwipangestu/gis-ui/commit/a20c42af2c621b2df73813bc060a4d6602667cfc))
+* **hooks:** add category edit hook ([67ac533](https://github.com/armandwipangestu/gis-ui/commit/67ac533066c8c0467eebfb0452b0991d7c3e72a8))
+* **hooks:** add category hook ([3b5c352](https://github.com/armandwipangestu/gis-ui/commit/3b5c352220610251f8a8d52e532186f088599747))
+* **hooks:** add category update (mutation) hook ([aaa8781](https://github.com/armandwipangestu/gis-ui/commit/aaa87810e8ae86c166654a3da0d9d58099ca14f0))
+
 # [1.0.0-rc.19](https://github.com/armandwipangestu/gis-ui/compare/v1.0.0-rc.18...v1.0.0-rc.19) (2025-12-06)
 
 
