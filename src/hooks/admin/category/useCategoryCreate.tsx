@@ -24,6 +24,7 @@ export const useCategoryCreate = () => {
             const response = await Api.post(`/api/admin/categories`, formData, {
                 headers: {
                     Authorization: `Bearer ${token}`,
+                    "Content-Type": "multipart/form-data",
                 },
             });
 
