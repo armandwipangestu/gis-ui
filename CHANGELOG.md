@@ -1,3 +1,14 @@
+# [1.0.0-rc.22](https://github.com/armandwipangestu/gis-ui/compare/v1.0.0-rc.21...v1.0.0-rc.22) (2025-12-07)
+
+
+### Features
+
+* **hooks:** add map by id hook ([a83d53c](https://github.com/armandwipangestu/gis-ui/commit/a83d53ce9b4a49f5fb2e49e40e422ddb1cc0e049))
+* **hooks:** add map create (mutation) hook ([48be576](https://github.com/armandwipangestu/gis-ui/commit/48be5766f3b5967586cbe295ba971a7a1dee6ac6))
+* **hooks:** add map delete (mutation) hook ([8686888](https://github.com/armandwipangestu/gis-ui/commit/8686888882acb674ff5f51dcb54d2a74bc491b8f))
+* **hooks:** add map hook ([71ce5c0](https://github.com/armandwipangestu/gis-ui/commit/71ce5c03059738adc0a71a1e13928fadc3df3b64))
+* **hooks:** add map update (mutation) hook ([f704dc2](https://github.com/armandwipangestu/gis-ui/commit/f704dc23f84cb3e933714cd41b81fa7f8b9bd0b6))
+
 # [1.0.0-rc.21](https://github.com/armandwipangestu/gis-ui/compare/v1.0.0-rc.20...v1.0.0-rc.21) (2025-12-07)
 
 
