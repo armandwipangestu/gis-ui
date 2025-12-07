@@ -1,3 +1,13 @@
+# [1.0.0-rc.21](https://github.com/armandwipangestu/gis-ui/compare/v1.0.0-rc.20...v1.0.0-rc.21) (2025-12-07)
+
+
+### Features
+
+* **crud:** add create data categories ([7a19b0f](https://github.com/armandwipangestu/gis-ui/commit/7a19b0fcb1673624e6c72badbca3e7dcf544bb99))
+* **crud:** add delete data categories ([71a551d](https://github.com/armandwipangestu/gis-ui/commit/71a551da4e26bd64bbe29dea910af78adbc87427))
+* **crud:** add edit data categories ([f7d95b2](https://github.com/armandwipangestu/gis-ui/commit/f7d95b251d1b18e043589a56c31402e9f63506c9))
+* **crud:** add list data categories ([b627f71](https://github.com/armandwipangestu/gis-ui/commit/b627f71bc6c6da6c9a5d7f5d4d3de2d13bd440a9))
+
 # [1.0.0-rc.20](https://github.com/armandwipangestu/gis-ui/compare/v1.0.0-rc.19...v1.0.0-rc.20) (2025-12-07)
 
 
