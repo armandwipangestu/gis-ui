@@ -27,6 +27,18 @@ export const useMapUpdate = () => {
             formData.append("longitude", data.longitude); // send string according to backend
             formData.append("category_id", String(data.category_id));
 
+            // Optional field
+            if (
+                typeof data.geometry !== "undefined" &&
+                data.geometry !== null
+            ) {
+                formData.append("geometry", data.geometry); // JSON string (GeoJSON)
+            }
+
+            if (typeof data.status !== "undefined" && data.status !== null) {
+                formData.append("status", data.status); // 'active' | 'inactive'
+            }
+
             // Send request update to API
             const response = await Api.put(
                 `/api/admin/maps/${data.id}`,
