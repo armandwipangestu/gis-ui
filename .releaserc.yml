@@ -52,8 +52,15 @@ plugins:
         message: "chore(release): ${nextRelease.version} [skip ci]\n\n${nextRelease.notes}"
 
     - - "@semantic-release/github"
-      - successComment: true
-        labels: true
+      - successComment: |
+            🎉 This PR is included in version **${nextRelease.version}** 🎉
+
+            🔗 **View Release:** ${nextRelease.gitTagUrl}
+
+            🤖 *Your semantic-release bot* 🚀
+        labels:
+            - released
+            - semver:${nextRelease.type}
 
     - - "@semantic-release/exec"
       - successCmd: 'echo "${nextRelease.version}" > version.txt'
