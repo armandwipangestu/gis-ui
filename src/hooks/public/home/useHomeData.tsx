@@ -129,7 +129,7 @@ export const useHomeData = () => {
         });
 
         return {
-            type: "FeaturedCollection",
+            type: "FeatureCollection",
             features,
         };
     }, [categories, selectedIds]);
