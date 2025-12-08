@@ -45,15 +45,14 @@ jobs:
       - name: Push Docker Image (SHA tag)
         run: docker push $IMAGE_NAME:${{ env.SHORT_SHA }}
 
+      - name: Save SHA to file
+        run: echo "${SHORT_SHA}" > sha.txt
+
       - name: Upload SHA artifact
         uses: actions/upload-artifact@v4
         with:
           name: built-sha
-          path: |
-            sha.txt
-        env:
-          SHA_SAVE: |
-            echo "${{ env.SHORT_SHA }}" > sha.txt
+          path: sha.txt
 
   # ------------------------------------------------------
   # JOB 2 - SEMANTIC RELEASE
