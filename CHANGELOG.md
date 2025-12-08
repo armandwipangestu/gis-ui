@@ -1,3 +1,10 @@
+# [1.0.0-rc.25](https://github.com/armandwipangestu/gis-ui/compare/v1.0.0-rc.24...v1.0.0-rc.25) (2025-12-08)
+
+
+### Bug Fixes
+
+* **ci:** change success comment using hardcode url ([18f30ae](https://github.com/armandwipangestu/gis-ui/commit/18f30ae6836e52b76def12cc780a2d4b9a6bbbd7))
+
 # [1.0.0-rc.24](https://github.com/armandwipangestu/gis-ui/compare/v1.0.0-rc.23...v1.0.0-rc.24) (2025-12-08)
 
 
