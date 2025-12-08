@@ -1,3 +1,11 @@
+# [1.0.0-rc.24](https://github.com/armandwipangestu/gis-ui/compare/v1.0.0-rc.23...v1.0.0-rc.24) (2025-12-08)
+
+
+### Bug Fixes
+
+* **ci:** add sha stdout to file ([d9147ff](https://github.com/armandwipangestu/gis-ui/commit/d9147ff8fa017f44c2ae29205fa5b4233009beb7))
+* **ci:** update comment variable ([efd1449](https://github.com/armandwipangestu/gis-ui/commit/efd144930336f6e80633993318968df7b3f16677))
+
 # [1.0.0-rc.23](https://github.com/armandwipangestu/gis-ui/compare/v1.0.0-rc.22...v1.0.0-rc.23) (2025-12-08)
 
 
