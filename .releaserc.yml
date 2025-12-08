@@ -55,12 +55,11 @@ plugins:
       - successComment: |
             🎉 This PR is included in version **${nextRelease.version}** 🎉
 
-            🔗 **View Release:** ${nextRelease.gitTagUrl}
+            🔗 **View Release:** ${repoUrl}/releases/tag/${nextRelease.gitTag}
 
-            🤖 *Your semantic-release bot* 🚀
+            🤖 *Your [semantic-release](https://github.com/semantic-release/semantic-release) bot* 🚀
         labels:
             - released
-            - semver:${nextRelease.type}
 
     - - "@semantic-release/exec"
       - successCmd: 'echo "${nextRelease.version}" > version.txt'
