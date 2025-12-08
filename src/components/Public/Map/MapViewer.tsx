@@ -190,7 +190,7 @@ function ReadonlyGeometryLayer({
             // === NEW: install handler per feature ===
             onEachFeature: (feature, lyr) => {
                 // Click -> passing to callback page
-                (lyr as any).on?.click("click", (e: any) => {
+                (lyr as any).on?.("click", (e: any) => {
                     const ll = e?.latlng
                         ? { lat: e.latlng.lat, lng: e.latlng.lng }
                         : undefined;
