@@ -27,7 +27,7 @@ export function useMediaQuery(query: string) {
             if (mql.removeEventListener) {
                 mql.removeEventListener("change", onChange as any);
             } else {
-                mql.removeEventListener(onChange as any);
+                mql.removeListener(onChange as any);
             }
         };
     }, [query]);
