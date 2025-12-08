@@ -1,3 +1,12 @@
+# [1.0.0-rc.28](https://github.com/armandwipangestu/gis-ui/compare/v1.0.0-rc.27...v1.0.0-rc.28) (2025-12-08)
+
+
+### Features
+
+* **components:** add category item public ([5d5da0e](https://github.com/armandwipangestu/gis-ui/commit/5d5da0e1b6b0a314f66b4fc638f982856cf120a1))
+* **components:** add map viewer public ([31bcc9a](https://github.com/armandwipangestu/gis-ui/commit/31bcc9a05a2e1c4e2f142d291f5e83aedc66dd1f))
+* **components:** add sidebar ([2e6b834](https://github.com/armandwipangestu/gis-ui/commit/2e6b834d27979505cabecebeb0937291b6f9868f))
+
 # [1.0.0-rc.27](https://github.com/armandwipangestu/gis-ui/compare/v1.0.0-rc.26...v1.0.0-rc.27) (2025-12-08)
 
 
