@@ -8,6 +8,9 @@ import TableEmptyRow from "../../../components/General/TableEmptyRow";
 import Pagination from "../../../components/General/Pagination";
 import Loading from "../../../components/General/Loading";
 import Error from "../../../components/General/Error";
+import { useMapDelete } from "../../../hooks/admin/map/useMapDelete";
+import { useQueryClient } from "@tanstack/react-query";
+import toast from "react-hot-toast";
 
 const Maps: React.FC = () => {
     // Change title page
@@ -46,6 +49,40 @@ const Maps: React.FC = () => {
 
         setSearchParams(params);
     }, [submittedSearch, page]);
+
+    // TanStack Query Client
+    const queryClient = useQueryClient();
+
+    // Hook delete map
+    const { mutate, isPending } = useMapDelete();
+
+    // Delete map
+    const handleDelete = (id: number) => {
+        if (confirm("Are you sure you want to delete this map?")) {
+            mutate(id, {
+                onSuccess: () => {
+                    // Refresh list (use the same key with already set/used in useMaps)
+                    queryClient.invalidateQueries({ queryKey: ["maps"] });
+
+                    // Back to page 1 (optional)
+                    setPage(1);
+
+                    // Notify success
+                    toast.success("Map deleted successfully", {
+                        position: "top-right",
+                        duration: 3000,
+                    });
+                },
+                onError: (error: any) => {
+                    alert(
+                        `Failed to delete map: ${
+                            error?.message || "Unknown error"
+                        }`
+                    );
+                },
+            });
+        }
+    };
 
     return (
         <AppLayout>
@@ -193,6 +230,14 @@ const Maps: React.FC = () => {
                                                             "maps-delete",
                                                         ]) && (
                                                             <button
+                                                                onClick={() => {
+                                                                    handleDelete(
+                                                                        mapItem.id
+                                                                    );
+                                                                }}
+                                                                disabled={
+                                                                    isPending
+                                                                }
                                                                 className="text-red-500 hover:text-red-700 p-1.5 rounded-full hover:bg-red-50 transition-colors"
                                                                 title="Delete"
                                                             >
