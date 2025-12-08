@@ -1,3 +1,17 @@
+# [1.0.0-rc.26](https://github.com/armandwipangestu/gis-ui/compare/v1.0.0-rc.25...v1.0.0-rc.26) (2025-12-08)
+
+
+### Bug Fixes
+
+* typo function ([285932b](https://github.com/armandwipangestu/gis-ui/commit/285932b3a91f88f2bc99e3e72c89d85d82c735ff))
+
+
+### Features
+
+* **ci:** add failComment ([4b6dfd3](https://github.com/armandwipangestu/gis-ui/commit/4b6dfd3ffd6817bbc8109b1d53d0e2adb29dd6da))
+* **hooks:** add useMediaQuery hook ([c022001](https://github.com/armandwipangestu/gis-ui/commit/c0220018169c338bb80358bd2009705f8f51f05a))
+* **hooks:** add useSidebarBreakpointSync ([80e85c7](https://github.com/armandwipangestu/gis-ui/commit/80e85c73551faa9ae06519d4561a5388420d2182))
+
 # [1.0.0-rc.25](https://github.com/armandwipangestu/gis-ui/compare/v1.0.0-rc.24...v1.0.0-rc.25) (2025-12-08)
 
 
