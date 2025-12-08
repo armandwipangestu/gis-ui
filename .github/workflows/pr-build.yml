@@ -53,4 +53,5 @@ jobs:
       - name: Test semantic-release (dry-run)
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN  }}
-        run: npx semantic-release --dry-run
+          DEBUG: "semantic-release:*"
+        run: npx semantic-release --dry-run --branches=${{ github.head_ref }}
