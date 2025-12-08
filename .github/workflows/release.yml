@@ -10,9 +10,57 @@ env:
   IMAGE_NAME: ghcr.io/armandwipangestu/gis-ui
 
 jobs:
+  # ------------------------------------------------------
+  # JOB 1 - BUILD DOCKER IMAGE USING COMMIT SHA (HASH)
+  # ------------------------------------------------------
+  build-docker-sha:
+    name: Build Docker Image Using Commit SHA
+    runs-on: ubuntu-latest
+    permissions:
+      contents: write
+      issues: write
+      pull-requests: write
+    environment: ${{ github.ref_name }}
+    env:
+      VITE_BASE_URL: ${{ secrets.VITE_BASE_URL || 'http://localhost:3000' }}
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      - name: Extract commit SHA
+        id: sha
+        run: echo "SHORT_SHA=$(git rev-parse --short HEAD)" >> $GITHUB_ENV
+
+      - name: Log in to GitHub Container Registry
+        run: echo "${{ secrets.GH_TOKEN }}" | docker login ghcr.io -u "${{ secrets.GH_USERNAME }}" --password-stdin
+
+      - name: Build Docker Image with SHA tag
+        run: |
+          docker build \
+            -f Dockerfile \
+            --build-arg VITE_BASE_URL=${{ secrets.VITE_BASE_URL || 'http://localhost:3000' }} \
+            -t $IMAGE_NAME:${{ env.SHORT_SHA }} .
+
+      - name: Push Docker Image (SHA tag)
+        run: docker push $IMAGE_NAME:${{ env.SHORT_SHA }}
+
+      - name: Save SHA to file
+        run: echo "${SHORT_SHA}" > sha.txt
+
+      - name: Upload SHA artifact
+        uses: actions/upload-artifact@v4
+        with:
+          name: built-sha
+          path: sha.txt
+
+  # ------------------------------------------------------
+  # JOB 2 - SEMANTIC RELEASE
+  # ------------------------------------------------------
   release-and-tagging-version:
     name: Release and Tagging Version
     runs-on: ubuntu-latest
+    needs: build-docker-sha
     permissions:
       contents: write
       issues: write
@@ -53,10 +101,15 @@ jobs:
           name: release-version
           path: version.txt
 
-  build-and-push-docker:
-    name: Build and Push Docker Image
+  # ------------------------------------------------------
+  # JOB 3 - RETAG IMAGE: SHA -> VERSION -> LATEST
+  # ------------------------------------------------------
+  retag-and-push:
+    name: Retag and Push Docker Image
     runs-on: ubuntu-latest
-    needs: release-and-tagging-version
+    needs:
+      - build-docker-sha
+      - release-and-tagging-version
     permissions:
       contents: write
       issues: write
@@ -77,34 +130,28 @@ jobs:
       - name: Set VERSION env
         run: echo "VERSION=$(cat version.txt)" >> $GITHUB_ENV
 
+      - name: Download sha.txt artifact
+        uses: actions/download-artifact@v4
+        with:
+          name: built-sha
+
+      - name: Set SHORT_SHA env
+        run: echo "SHORT_SHA=$(cat sha.txt)" >> $GITHUB_ENV
+
       - name: Log in to GitHub Container Registry
         run: echo "${{ secrets.GH_TOKEN }}" | docker login ghcr.io -u "${{ secrets.GH_USERNAME }}" --password-stdin
 
-      - name: Determine build context
-        id: vars
-        run: |
-          echo "dockerfile=Dockerfile" >> $GITHUB_OUTPUT
-          if [[ "${GITHUB_REF##*/}" == "main" ]]; then
-            echo "tag=${VERSION}" >> $GITHUB_OUTPUT
-            echo "latest_tag=latest" >> $GITHUB_OUTPUT
-            echo "node_env=production" >> $GITHUB_OUTPUT
-          elif [[ "${GITHUB_REF##*/}" == "staging" ]]; then
-            echo "tag=${VERSION}" >> $GITHUB_OUTPUT
-            echo "node_env=development" >> $GITHUB_OUTPUT
-          fi
+      - name: Pull SHA image
+        run: docker pull $IMAGE_NAME:${{ env.SHORT_SHA }}
 
-      - name: Build Docker Image
-        run: |
-          docker build \
-            -f ${{ steps.vars.outputs.dockerfile }} \
-            --build-arg VITE_BASE_URL=${{ secrets.VITE_BASE_URL || 'http://localhost:3000' }} \
-            -t ${{ env.IMAGE_NAME }}:${{ steps.vars.outputs.tag }} .
+      - name: Retag SHA -> Version
+        run: docker tag $IMAGE_NAME:${{ env.SHORT_SHA }} $IMAGE_NAME:${{ env.VERSION }}
 
-      - name: Push Docker Image
-        run: docker push ${{ env.IMAGE_NAME }}:${{ steps.vars.outputs.tag }}
+      - name: Push Version Tag
+        run: docker push $IMAGE_NAME:${{ env.VERSION }}
 
-      - name: Push latest tag if main
+      - name: Retag latest (only on main)
         if: github.ref_name == 'main'
         run: |
-          docker tag ${{ env.IMAGE_NAME }}:${{ steps.vars.outputs.tag }} ${{ env.IMAGE_NAME }}:${{ steps.vars.outputs.latest_tag }}
-          docker push ${{ env.IMAGE_NAME }}:${{ steps.vars.outputs.latest_tag }}
+          docker tag $IMAGE_NAME:${{ env.VERSION }} $IMAGE_NAME:latest
+          docker push $IMAGE_NAME:latest

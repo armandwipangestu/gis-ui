@@ -1,0 +1,264 @@
+import { Routes, Route, Navigate } from "react-router";
+
+import { useAuthStore } from "../stores/auth";
+
+import Login from "../views/auth/login";
+import Dashboard from "../views/admin/dashboard";
+import Forbidden from "../views/admin/forbidden";
+import Permissions from "../views/admin/permissions";
+import PermissionCreate from "../views/admin/permissions/create";
+import PermissionEdit from "../views/admin/permissions/edit";
+import Roles from "../views/admin/roles";
+import RoleCreate from "../views/admin/roles/create";
+import RoleEdit from "../views/admin/roles/edit";
+import Users from "../views/admin/users";
+import UserCreate from "../views/admin/users/create";
+import UserEdit from "../views/admin/users/edit";
+import Settings from "../views/admin/settings";
+import Categories from "../views/admin/categories";
+import CategoryCreate from "../views/admin/categories/create";
+import CategoryEdit from "../views/admin/categories/edit";
+import Maps from "../views/admin/maps";
+import MapCreate from "../views/admin/maps/create";
+import MapEdit from "../views/admin/maps/edit";
+import HomePage from "../views/public/home";
+
+export default function AppRoutes() {
+    // Get state isAuthenticated from useAuthStore
+    const isAuthenticated = useAuthStore((state) => state.token !== "");
+
+    return (
+        <Routes>
+            {/* Route "/login" */}
+            <Route
+                path="/login"
+                element={
+                    isAuthenticated ? (
+                        <Navigate to="/admin/dashboard" replace />
+                    ) : (
+                        <Login />
+                    )
+                }
+            />
+
+            {/* Route "/admin/dashboard" */}
+            <Route
+                path="/admin/dashboard"
+                element={
+                    isAuthenticated ? (
+                        <Dashboard />
+                    ) : (
+                        <Navigate to="/login" replace />
+                    )
+                }
+            />
+
+            {/* Route "/admin/forbidden" */}
+            <Route
+                path="/admin/forbidden"
+                element={
+                    isAuthenticated ? (
+                        <Forbidden />
+                    ) : (
+                        <Navigate to="/login" replace />
+                    )
+                }
+            />
+
+            {/* Route "/admin/permissions" */}
+            <Route
+                path="/admin/permissions"
+                element={
+                    isAuthenticated ? (
+                        <Permissions />
+                    ) : (
+                        <Navigate to="/login" replace />
+                    )
+                }
+            />
+
+            {/* Route "/admin/permissions/create" */}
+            <Route
+                path="/admin/permissions/create"
+                element={
+                    isAuthenticated ? (
+                        <PermissionCreate />
+                    ) : (
+                        <Navigate to="/login" replace />
+                    )
+                }
+            />
+
+            {/* Route "/admin/permission/edit/:id" */}
+            <Route
+                path="/admin/permissions/edit/:id"
+                element={
+                    isAuthenticated ? (
+                        <PermissionEdit />
+                    ) : (
+                        <Navigate to="/login" replace />
+                    )
+                }
+            />
+
+            {/* Route "/admin/roles" */}
+            <Route
+                path="/admin/roles"
+                element={
+                    isAuthenticated ? (
+                        <Roles />
+                    ) : (
+                        <Navigate to="/login" replace />
+                    )
+                }
+            />
+
+            {/* Route "/admin/roles/create" */}
+            <Route
+                path="/admin/roles/create"
+                element={
+                    isAuthenticated ? (
+                        <RoleCreate />
+                    ) : (
+                        <Navigate to="/login" replace />
+                    )
+                }
+            />
+
+            {/* Route "/admin/roles/edit/:id" */}
+            <Route
+                path="/admin/roles/edit/:id"
+                element={
+                    isAuthenticated ? (
+                        <RoleEdit />
+                    ) : (
+                        <Navigate to="/login" replace />
+                    )
+                }
+            />
+
+            {/* Route "/admin/users" */}
+            <Route
+                path="/admin/users"
+                element={
+                    isAuthenticated ? (
+                        <Users />
+                    ) : (
+                        <Navigate to="/login" replace />
+                    )
+                }
+            />
+
+            {/* Route "/admin/users/create" */}
+            <Route
+                path="/admin/users/create"
+                element={
+                    isAuthenticated ? (
+                        <UserCreate />
+                    ) : (
+                        <Navigate to="/login" replace />
+                    )
+                }
+            />
+
+            {/* Route "/admin/users/edit/:id" */}
+            <Route
+                path="/admin/users/edit/:id"
+                element={
+                    isAuthenticated ? (
+                        <UserEdit />
+                    ) : (
+                        <Navigate to="/login" replace />
+                    )
+                }
+            />
+
+            {/* Route "/admin/settings" */}
+            <Route
+                path="/admin/settings"
+                element={
+                    isAuthenticated ? (
+                        <Settings />
+                    ) : (
+                        <Navigate to="/login" replace />
+                    )
+                }
+            />
+
+            {/* Route "/admin/categories" */}
+            <Route
+                path="/admin/categories"
+                element={
+                    isAuthenticated ? (
+                        <Categories />
+                    ) : (
+                        <Navigate to="/login" replace />
+                    )
+                }
+            />
+
+            {/* Route "/admin/categories/create" */}
+            <Route
+                path="/admin/categories/create"
+                element={
+                    isAuthenticated ? (
+                        <CategoryCreate />
+                    ) : (
+                        <Navigate to="/login" replace />
+                    )
+                }
+            />
+
+            {/* Route "/admin/categories/edit/:id" */}
+            <Route
+                path="/admin/categories/edit/:id"
+                element={
+                    isAuthenticated ? (
+                        <CategoryEdit />
+                    ) : (
+                        <Navigate to="/login" replace />
+                    )
+                }
+            />
+
+            {/* Route "/admin/maps" */}
+            <Route
+                path="/admin/maps"
+                element={
+                    isAuthenticated ? (
+                        <Maps />
+                    ) : (
+                        <Navigate to="/login" replace />
+                    )
+                }
+            />
+
+            {/* Route "/admin/maps/create" */}
+            <Route
+                path="/admin/maps/create"
+                element={
+                    isAuthenticated ? (
+                        <MapCreate />
+                    ) : (
+                        <Navigate to="/login" replace />
+                    )
+                }
+            />
+
+            {/* Route "/admin/maps/edit/:id" */}
+            <Route
+                path="/admin/maps/edit/:id"
+                element={
+                    isAuthenticated ? (
+                        <MapEdit />
+                    ) : (
+                        <Navigate to="/login" replace />
+                    )
+                }
+            />
+
+            {/* Route "/" */}
+            <Route path="/" element={<HomePage />} />
+        </Routes>
+    );
+}
