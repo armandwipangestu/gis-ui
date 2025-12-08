@@ -40,6 +40,16 @@ jobs:
       - name: Build app (for validation)
         run: npm run build
 
+      - name: Install semantic-release globally
+        run: |
+          npm install -g \
+            semantic-release \
+            @semantic-release/changelog \
+            @semantic-release/git \
+            @semantic-release/exec \
+            @semantic-release/github \
+            conventional-changelog-conventionalcommits
+
       - name: Test semantic-release (dry-run)
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN  }}
