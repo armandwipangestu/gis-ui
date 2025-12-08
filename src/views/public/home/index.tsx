@@ -4,6 +4,7 @@ import { useSidebarStore } from "../../../stores/sidebar";
 import { useSidebarBreakpointSync } from "../../../hooks/public/sidebar/useSidebarBreakpointSync";
 import { useHomeData } from "../../../hooks/public/home/useHomeData";
 import { Sidebar } from "../../../components/App/Sidebar";
+import { MapViewer } from "../../../components/Public/Map/MapViewer";
 
 const HomePage: React.FC = () => {
     // Change title page
@@ -26,6 +27,12 @@ const HomePage: React.FC = () => {
         setSearchTerm,
         toggleAll,
         toggleOne,
+        // map data
+        center,
+        zoom,
+        selectedCollection,
+        guideGeometry,
+        handleFeatureClick,
     } = useHomeData();
 
     return (
@@ -57,6 +64,28 @@ const HomePage: React.FC = () => {
                 />
 
                 {/* Map Section */}
+                <section className="relative z-10 lg:h-[calc(100vh-72px)] lg:overflow-hidden">
+                    <div className="pointer-events-none absolute top-3 right-3 z-[1000] rounded-lg border border-slate-200 bg-white/90 px-3 py-1.5 text-sm font-medium text-slate-700 shadow-lg backdrop-blur">
+                        {selectedCollection.features.length} fitur ditampilkan
+                    </div>
+
+                    <div className="h-[calc(100vh-72px)] w-full">
+                        <MapViewer
+                            center={center}
+                            zoom={zoom}
+                            geometry={selectedCollection}
+                            guideGeometry={guideGeometry}
+                            autoFit={
+                                selectedCollection.features.length
+                                    ? "always"
+                                    : "never"
+                            }
+                            height="100%"
+                            containerKey={`${center[0]}-${center[1]}-${zoom}-${selectedCollection.features.length}`}
+                            onFeatureClick={handleFeatureClick}
+                        />
+                    </div>
+                </section>
             </main>
         </AppLayout>
     );
