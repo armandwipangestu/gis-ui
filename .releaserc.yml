@@ -55,7 +55,7 @@ plugins:
       - successComment: |
             🎉 This PR is included in version **${nextRelease.version}** 🎉
 
-            🔗 **View Release:** ${repoUrl}/releases/tag/${nextRelease.gitTag}
+            🔗 **View Release:** https://github.com/armandwipangestu/gis-ui/releases/tag/${nextRelease.gitTag}
 
             🤖 *Your [semantic-release](https://github.com/semantic-release/semantic-release) bot* 🚀
         labels:
