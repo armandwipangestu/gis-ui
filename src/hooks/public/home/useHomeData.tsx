@@ -83,7 +83,8 @@ export const useHomeData = () => {
 
     // Create feature collection from selectedIds
     const selectedCollection = useMemo(() => {
-        const features: any[] = [](categories ?? []).forEach((cat: any) => {
+        const features: any[] = [];
+        (categories ?? []).forEach((cat: any) => {
             (cat?.maps ?? []).forEach((m: any) => {
                 if (!selectedIds.includes(Number(m?.id))) {
                     return;
