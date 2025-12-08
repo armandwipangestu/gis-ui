@@ -21,6 +21,7 @@ import CategoryEdit from "../views/admin/categories/edit";
 import Maps from "../views/admin/maps";
 import MapCreate from "../views/admin/maps/create";
 import MapEdit from "../views/admin/maps/edit";
+import HomePage from "../views/public/home";
 
 export default function AppRoutes() {
     // Get state isAuthenticated from useAuthStore
@@ -255,6 +256,9 @@ export default function AppRoutes() {
                     )
                 }
             />
+
+            {/* Route "/" */}
+            <Route path="/" element={<HomePage />} />
         </Routes>
     );
 }
