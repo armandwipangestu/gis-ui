@@ -1,3 +1,25 @@
+# [1.0.0-rc.23](https://github.com/armandwipangestu/gis-ui/compare/v1.0.0-rc.22...v1.0.0-rc.23) (2025-12-08)
+
+
+### Bug Fixes
+
+* add comment on semantic release bot ([220c14d](https://github.com/armandwipangestu/gis-ui/commit/220c14de9a5ca21e4591e996280bee6266cd01d3))
+* add geometry and status field to hook mutation update map ([8437ae6](https://github.com/armandwipangestu/gis-ui/commit/8437ae6e78f7a727489abdc5aed1b7127cb74ef2))
+* add install semantic-release globally ([48f2a39](https://github.com/armandwipangestu/gis-ui/commit/48f2a39d743e3ad9fe5b5c2cb854e36862ff90ca))
+* **ci:** add login to ghcr ([356e699](https://github.com/armandwipangestu/gis-ui/commit/356e699dca5a9cffbf041225d4f236ff49d57a0f))
+* comment semantic release configuration ([79ceec2](https://github.com/armandwipangestu/gis-ui/commit/79ceec2b4466df8ced47c87e49577be58277e6a5))
+* inactive linting checking & add semantic-release dry-run mode ([9f11c12](https://github.com/armandwipangestu/gis-ui/commit/9f11c1258510977a4ccf3dd07d78e5dc9c30ead7))
+* run semantic-release dryrun on head ref branch ([d3151d4](https://github.com/armandwipangestu/gis-ui/commit/d3151d4af771b03050ee2bc40c0ed5a2ad2e816d))
+
+
+### Features
+
+* **ci:** update release workflow ([f87ff5b](https://github.com/armandwipangestu/gis-ui/commit/f87ff5befa915d62c76d4533e20fe8052de10ac9))
+* **crud:** add create data maps ([c940cb6](https://github.com/armandwipangestu/gis-ui/commit/c940cb6fc241cc5821bdbc147577ed389fbb976b))
+* **crud:** add delete data maps ([8dbacbf](https://github.com/armandwipangestu/gis-ui/commit/8dbacbfe64d8e023db458bab8da6c07dff73e724))
+* **crud:** add list data maps ([afddd50](https://github.com/armandwipangestu/gis-ui/commit/afddd50a2ad36effc88f18ebd5608813994af1c4))
+* **crud:** add update data maps ([56c44d4](https://github.com/armandwipangestu/gis-ui/commit/56c44d4b8c27be5ff4b21bbfc0b6918f294595a3))
+
 # [1.0.0-rc.22](https://github.com/armandwipangestu/gis-ui/compare/v1.0.0-rc.21...v1.0.0-rc.22) (2025-12-07)
 
 
