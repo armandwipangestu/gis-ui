@@ -1,3 +1,19 @@
+# [1.0.0-rc.29](https://github.com/armandwipangestu/gis-ui/compare/v1.0.0-rc.28...v1.0.0-rc.29) (2025-12-08)
+
+
+### Bug Fixes
+
+* remove incorrect italic char ([b390020](https://github.com/armandwipangestu/gis-ui/commit/b390020c3ed4ad622e3737e988489ce5a6209244))
+* typo ([2c6fd1f](https://github.com/armandwipangestu/gis-ui/commit/2c6fd1fb2c2507bd0905e01f2e6859ec1f1bcf66))
+* typo click function on lyr variable ([39c806c](https://github.com/armandwipangestu/gis-ui/commit/39c806c1694498f5e7fefadf7fb43c144bab3e60))
+
+
+### Features
+
+* **views:** add home page ([0425db0](https://github.com/armandwipangestu/gis-ui/commit/0425db0e68feb9365066c72ecde3d95a852fcc0e))
+* **views:** add show maps on home page ([9af4f60](https://github.com/armandwipangestu/gis-ui/commit/9af4f60b81c4f0ad3a1b220acb98b461a679835a))
+* **views:** add sidebar to home page ([cf729ba](https://github.com/armandwipangestu/gis-ui/commit/cf729ba0181da992617fd096f7943ad0f1b2c821))
+
 # [1.0.0-rc.28](https://github.com/armandwipangestu/gis-ui/compare/v1.0.0-rc.27...v1.0.0-rc.28) (2025-12-08)
 
 
