@@ -1,3 +1,17 @@
+# [1.0.0-rc.27](https://github.com/armandwipangestu/gis-ui/compare/v1.0.0-rc.26...v1.0.0-rc.27) (2025-12-08)
+
+
+### Bug Fixes
+
+* variable initialize ([0e2f72a](https://github.com/armandwipangestu/gis-ui/commit/0e2f72a3ba15a5337c6f6f3d457d82336244b286))
+
+
+### Features
+
+* **hooks:** add use category public hook ([78784a4](https://github.com/armandwipangestu/gis-ui/commit/78784a4cf43b1cb6b2d3e55b04d18e64e012eebe))
+* **hooks:** add use home data public hook ([7441df1](https://github.com/armandwipangestu/gis-ui/commit/7441df1243aa9d6440ecd7007640f6fdfde4fde8))
+* **hooks:** add use setting public hook ([8b2358f](https://github.com/armandwipangestu/gis-ui/commit/8b2358f0d132cbb096f32a0242835f595a90ae99))
+
 # [1.0.0-rc.26](https://github.com/armandwipangestu/gis-ui/compare/v1.0.0-rc.25...v1.0.0-rc.26) (2025-12-08)
 
 
