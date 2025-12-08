@@ -1,41 +1,46 @@
 name: PR Build & Test
 
 on:
-    pull_request:
-        branches:
-            - staging
-            - main
-        types:
-            - opened
-            - synchronize
-            - reopened
+  pull_request:
+    branches:
+      - staging
+      - main
+    types:
+      - opened
+      - synchronize
+      - reopened
 
 jobs:
-    build-and-test:
-        name: Build and Test
-        runs-on: ubuntu-latest
-        environment: ${{ github.base_ref }}
+  build-and-test:
+    name: Build and Test
+    runs-on: ubuntu-latest
+    environment: ${{ github.base_ref }}
+    env:
+      VITE_BASE_URL: ${{ secrets.VITE_BASE_URL || 'http://localhost:3000' }}
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      - name: Use Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: "25"
+          cache: "npm"
+
+      - name: Install dependencies
+        run: npm ci
+
+      # - name: Run lint
+      #   run: npm run lint
+
+      # - name: Run tests
+      #   run: npm test
+
+      - name: Build app (for validation)
+        run: npm run build
+
+      - name: Test semantic-release (dry-run)
         env:
-            VITE_BASE_URL: ${{ secrets.VITE_BASE_URL || 'http://localhost:3000' }}
-
-        steps:
-            - name: Checkout repository
-              uses: actions/checkout@v4
-
-            - name: Use Node.js
-              uses: actions/setup-node@v4
-              with:
-                  node-version: "25"
-                  cache: "npm"
-
-            - name: Install dependencies
-              run: npm ci
-
-            - name: Run lint
-              run: npm run lint
-
-            # - name: Run tests
-            #   run: npm test
-
-            - name: Build app (for validation)
-              run: npm run build
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN  }}
+        run: npx semantic-release --dry-run
