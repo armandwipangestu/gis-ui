@@ -237,7 +237,7 @@ docker build --build-arg VITE_BASE_URL=http://gis-api:3000 -t gis-ui .
 2. Run the image
 
 ```bash
-docker run -p 5173:5173 gis-ui
+docker run --rm -p 5173:80 gis-ui
 ```
 
 ### Running with Docker Compose
