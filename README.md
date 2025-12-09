@@ -18,6 +18,7 @@
 
 -   [Features](#features)
 -   [Requirements](#requirements)
+-   [Project Structure](#project-structure)
 -   [Running the Application](#running-the-application)
     -   [Development Mode](#development-mode)
     -   [Running with Docker](#running-with-docker)
@@ -38,6 +39,160 @@
 -   NPM 10+
 -   Git
 -   Docker & Docker Compose (optional)
+
+## Project Structure
+
+```bash
+. gis-ui
+├── CHANGELOG.md
+├── docker-compose.yml
+├── Dockerfile
+├── eslint.config.js
+├── index.html
+├── nginx.conf
+├── package-lock.json
+├── package.json
+├── public
+│  └── vite.svg
+├── README.md
+├── src
+│  ├── App.css
+│  ├── App.tsx
+│  ├── assets
+│  │  └── react.svg
+│  ├── components
+│  │  ├── Admin
+│  │  │  └── Map
+│  │  │     ├── GeometryEditor.tsx
+│  │  │     ├── MapWithGeometryEditor.tsx
+│  │  │     └── RecenterOnProps.tsx
+│  │  ├── App
+│  │  │  ├── Header.tsx
+│  │  │  └── Sidebar.tsx
+│  │  ├── General
+│  │  │  ├── Error.tsx
+│  │  │  ├── Loading.tsx
+│  │  │  ├── Pagination.tsx
+│  │  │  └── TableEmptyRow.tsx
+│  │  └── Public
+│  │     ├── Category
+│  │     │  └── CategoryItem.tsx
+│  │     └── Map
+│  │        └── MapViewer.tsx
+│  ├── hooks
+│  │  ├── admin
+│  │  │  ├── category
+│  │  │  │  ├── useCategories.tsx
+│  │  │  │  ├── useCategoriesAll.tsx
+│  │  │  │  ├── useCategoryCreate.tsx
+│  │  │  │  ├── useCategoryDelete.tsx
+│  │  │  │  ├── useCategoryEdit.tsx
+│  │  │  │  └── useCategoryUpdate.tsx
+│  │  │  ├── dashboard
+│  │  │  │  └── useDashboard.tsx
+│  │  │  ├── map
+│  │  │  │  ├── useMapById.tsx
+│  │  │  │  ├── useMapConfiguration.tsx
+│  │  │  │  ├── useMapCreate.tsx
+│  │  │  │  ├── useMapDelete.tsx
+│  │  │  │  ├── useMaps.tsx
+│  │  │  │  └── useMapUpdate.tsx
+│  │  │  ├── permission
+│  │  │  │  ├── usePermissionById.tsx
+│  │  │  │  ├── usePermissionCreate.tsx
+│  │  │  │  ├── usePermissionDelete.tsx
+│  │  │  │  ├── usePermissions.tsx
+│  │  │  │  ├── usePermissionsAll.tsx
+│  │  │  │  └── usePermissionUpdate.tsx
+│  │  │  ├── role
+│  │  │  │  ├── useRoleAll.tsx
+│  │  │  │  ├── useRoleById.tsx
+│  │  │  │  ├── useRoleDelete.tsx
+│  │  │  │  ├── useRoles.tsx
+│  │  │  │  ├── useRoleUpdate.tsx
+│  │  │  │  └── useRouteCreate.tsx
+│  │  │  ├── setting
+│  │  │  │  ├── useSetting.tsx
+│  │  │  │  └── useSettingUpdate.tsx
+│  │  │  └── user
+│  │  │     ├── useUserById.tsx
+│  │  │     ├── useUserCreate.tsx
+│  │  │     ├── useUserDelete.tsx
+│  │  │     ├── useUsers.tsx
+│  │  │     └── useUserUpdate.tsx
+│  │  └── public
+│  │     ├── category
+│  │     │  └── useCategories.tsx
+│  │     ├── home
+│  │     │  └── useHomeData.tsx
+│  │     ├── setting
+│  │     │  └── useSetting.tsx
+│  │     └── sidebar
+│  │        ├── useMediaQuery.tsx
+│  │        └── useSidebarBreakpointSync.tsx
+│  ├── index.css
+│  ├── layouts
+│  │  └── AppLayout.tsx
+│  ├── main.tsx
+│  ├── routes
+│  │  └── index.tsx
+│  ├── services
+│  │  └── api.ts
+│  ├── stores
+│  │  ├── auth.ts
+│  │  └── sidebar.ts
+│  ├── types
+│  │  ├── auth.ts
+│  │  ├── category.ts
+│  │  ├── dashboard.ts
+│  │  ├── map.ts
+│  │  ├── params.ts
+│  │  ├── permission.ts
+│  │  ├── role.ts
+│  │  ├── setting.ts
+│  │  └── user.ts
+│  ├── utils
+│  │  ├── geojson.ts
+│  │  └── permissions.ts
+│  ├── views
+│  │  ├── admin
+│  │  │  ├── categories
+│  │  │  │  ├── create.tsx
+│  │  │  │  ├── edit.tsx
+│  │  │  │  └── index.tsx
+│  │  │  ├── dashboard
+│  │  │  │  └── index.tsx
+│  │  │  ├── forbidden
+│  │  │  │  └── index.tsx
+│  │  │  ├── maps
+│  │  │  │  ├── create.tsx
+│  │  │  │  ├── edit.tsx
+│  │  │  │  └── index.tsx
+│  │  │  ├── permissions
+│  │  │  │  ├── create.tsx
+│  │  │  │  ├── edit.tsx
+│  │  │  │  └── index.tsx
+│  │  │  ├── roles
+│  │  │  │  ├── create.tsx
+│  │  │  │  ├── edit.tsx
+│  │  │  │  └── index.tsx
+│  │  │  ├── settings
+│  │  │  │  └── index.tsx
+│  │  │  └── users
+│  │  │     ├── create.tsx
+│  │  │     ├── edit.tsx
+│  │  │     └── index.tsx
+│  │  ├── auth
+│  │  │  └── login.tsx
+│  │  └── public
+│  │     └── home
+│  │        └── index.tsx
+│  └── vite-env.d.ts
+├── tsconfig.app.json
+├── tsconfig.json
+├── tsconfig.node.json
+└── vite.config.ts
+```
 
 ## Running the Application
 
