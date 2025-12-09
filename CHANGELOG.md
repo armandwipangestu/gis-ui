@@ -1,3 +1,11 @@
+## [1.2.1](https://github.com/armandwipangestu/gis-ui/compare/v1.2.0...v1.2.1) (2025-12-09)
+
+
+### Bug Fixes
+
+* add project structure ([678f4a0](https://github.com/armandwipangestu/gis-ui/commit/678f4a0371615149b12f0bca93395dcca5624449))
+* remove icons ([1b749e8](https://github.com/armandwipangestu/gis-ui/commit/1b749e8026f9415afc118545e3769c0c2f4c3874))
+
 ## [1.2.1-rc.1](https://github.com/armandwipangestu/gis-ui/compare/v1.2.0...v1.2.1-rc.1) (2025-12-09)
 
 
