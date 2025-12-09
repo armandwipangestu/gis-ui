@@ -1,3 +1,15 @@
+# [1.3.0](https://github.com/armandwipangestu/gis-ui/compare/v1.2.1...v1.3.0) (2025-12-09)
+
+
+### Bug Fixes
+
+* **docs:** update port mapping ([90dd504](https://github.com/armandwipangestu/gis-ui/commit/90dd5048899c4e8bc72579ebbdae293e8bfd1ae0))
+
+
+### Features
+
+* **config:** update vite configuration ([743e021](https://github.com/armandwipangestu/gis-ui/commit/743e021b6349f11fd4461c9093fd1b26a5505890))
+
 # [1.3.0-rc.1](https://github.com/armandwipangestu/gis-ui/compare/v1.2.1-rc.1...v1.3.0-rc.1) (2025-12-09)
 
 
