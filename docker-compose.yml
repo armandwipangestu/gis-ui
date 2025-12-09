@@ -5,6 +5,7 @@ services:
       dockerfile: Dockerfile
       args:
         VITE_BASE_URL: "http://localhost:3000"
+    # image: ghcr.io/armandwipangestu/gis-ui:1.1.0
     container_name: gis-ui
     restart: unless-stopped
     ports:
