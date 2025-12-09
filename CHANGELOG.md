@@ -1,3 +1,10 @@
+# [1.2.0](https://github.com/armandwipangestu/gis-ui/compare/v1.1.0...v1.2.0) (2025-12-09)
+
+
+### Features
+
+* **docs:** add README.md ([9a8dfc8](https://github.com/armandwipangestu/gis-ui/commit/9a8dfc89883e9191a31635f80e776d12c6c57b0d))
+
 # [1.2.0-rc.1](https://github.com/armandwipangestu/gis-ui/compare/v1.1.0...v1.2.0-rc.1) (2025-12-09)
 
 
