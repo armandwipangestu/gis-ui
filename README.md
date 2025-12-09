@@ -1,69 +1,106 @@
-# React + TypeScript + Vite
+<h1 align="center">An application frontend for backend <a href="https://github.com/armandwipangestu/gis-api">https://github.com/armandwipangestu/gis-api</a></h1></h1>
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+<div align="center">
 
-Currently, two official plugins are available:
+![Vite.js](https://img.shields.io/badge/-Vite.js-F9FAFC?style=for-the-badge&logo=vite)&nbsp;
+![React.js](https://img.shields.io/badge/-React.js-F9FAFC?style=for-the-badge&logo=react)&nbsp;
+![TanStack Query](https://img.shields.io/badge/-TanStack%20Query-131821?style=for-the-badge&logo=tanstack)&nbsp;
+![OpenStreetMap](https://img.shields.io/badge/-OpenStreetMap-131821?style=for-the-badge&logo=openstreetmap)&nbsp;
+![Docker](https://img.shields.io/badge/-Docker-F9FAFC?style=for-the-badge&logo=docker)&nbsp;
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+</div>
 
-## Expanding the ESLint configuration
+<p align="center">A GIS Application built using React.js, TanStack Query, Axios, OpenStreetMap, and Golang as Backend</p>
 
-If you are developing a production application, we recommend updating the configuration to enable type-aware lint rules:
+---
 
-```js
-export default tseslint.config([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
+## Table of Contents
 
-      // Remove tseslint.configs.recommended and replace with this
-      ...tseslint.configs.recommendedTypeChecked,
-      // Alternatively, use this for stricter rules
-      ...tseslint.configs.strictTypeChecked,
-      // Optionally, add this for stylistic rules
-      ...tseslint.configs.stylisticTypeChecked,
+-   [Features](#features)
+-   [Requirements](#requirements)
+-   [Running the Application](#running-the-application)
+    -   [Development Mode](#development-mode)
+    -   [Running with Docker](#running-with-docker)
+    -   [Running with Docker Compose](#running-with-docker-compose)
 
-      // Other configs...
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
+---
+
+## Features
+
+-   Authentication (cookies + jwt)
+-   RBAC (Role-Based Action Control)
+-   Components, Hooks, Types (Reusable, Caching, Static Typing)
+-   Support build manual, and Docker image
+
+## Requirements
+
+-   Node.js 20+
+-   NPM 10+
+-   Git
+-   Docker & Docker Compose (optional)
+
+## Running the Application
+
+### Development Mode
+
+1. Clone Repository & Install dependencies
+
+```bash
+git clone https://github.com/armandwipangestu/gis-ui && cd gis-ui
+npm install
 ```
 
-You can also install [eslint-plugin-react-x](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-x) and [eslint-plugin-react-dom](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-dom) for React-specific lint rules:
+2. Setup Environment Variable
 
-```js
-// eslint.config.js
-import reactX from 'eslint-plugin-react-x'
-import reactDom from 'eslint-plugin-react-dom'
+```bash
+cp .env.example .env.local
+```
 
-export default tseslint.config([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
-      // Enable lint rules for React
-      reactX.configs['recommended-typescript'],
-      // Enable lint rules for React DOM
-      reactDom.configs.recommended,
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
+Fill with your own configuration
+
+```bash
+VITE_BASE_URL=http://localhost:3000
+```
+
+3. Running the application
+
+> [!NOTE]
+> Access the UI at http://localhost:5173
+
+```bash
+npm run dev
+```
+
+### Running with Docker
+
+1. Build the image
+
+```bash
+docker build --build-arg VITE_BASE_URL=http://gis-api:3000 -t gis-ui .
+```
+
+2. Run the image
+
+```bash
+docker run -p 5173:5173 gis-ui
+```
+
+### Running with Docker Compose
+
+1. Copy the `.env.example`
+
+```bash
+cp .env.example .env.local
+```
+
+2. Fill the value of `.env.local` with your own configuration
+
+```bash
+VITE_BASE_URL=http://localhost:3000
+```
+
+3. Runing the application using compose
+
+```bash
+docker compose up -d
 ```
